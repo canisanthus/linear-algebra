@@ -108,6 +108,19 @@ module.exports = function(linAlg, options) {
 
       m.should.be.instanceOf(this.Matrix);
       m.data.should.eql( [ [0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0] ]);
+    },
+    '.reshape': function() {
+        var m = this.Matrix.reshape([1, 2, 5, 3, 4, 6, 5, 6, 7, 7, 8, 8], 4, 3);
+
+        m.should.be.instanceOf(this.Matrix);
+        m.data.should.eql([ [ 1, 2, 5 ], [ 3, 4, 6 ], [ 5, 6, 7 ], [ 7, 8, 8 ] ]);
+
+        var that = this;
+
+        expect(function() {
+          that.Matrix.reshape([1, 2, 3], 2, 2)
+        }).throws('linear-algebra: value length is 3 and rows x cols is 4');
+
     }
   };
     
