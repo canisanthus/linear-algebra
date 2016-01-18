@@ -384,6 +384,18 @@ module.exports = function(linAlg, options) {
       var m = new this.Matrix([ [1, 2, 3], [4, 5, 6] ]);
       m.getArgMin().should.eql(0);
     },
+    'getNorm': function() {
+      var m = new this.Matrix([ [0.1, 0.2], [0.3, 0.4] ]);
+
+      var expected;
+      if (options.adder) {
+        expected = Math.sqrt(options.adder([Math.pow(0.1, 2), Math.pow(0.2, 2), Math.pow(0.3, 2), Math.pow(0.4, 2)]));
+      } else {
+        expected = Math.sqrt(Math.pow(0.1, 2) + Math.pow(0.2, 2) + Math.pow(0.3, 2) + Math.pow(0.4, 2));
+      }
+
+      m.getNorm().should.eql(expected);
+    },
   };
 
 

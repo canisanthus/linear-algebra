@@ -85,3 +85,19 @@ Matrix.prototype.getArgMin = function() {
 
  return idx;
 };
+
+Matrix.prototype.getNorm = function() {
+ var thisData = this.data,
+   rows = this.rows,
+   cols = this.cols;
+
+ var nnorm = 0;
+
+ for (var i = 0; i<rows; ++i) {
+   for (var j = 0; j<cols; ++j) {
+     nnorm += Math.pow(Math.abs(thisData[i][j]), 2);
+   }
+ }
+ 
+ return Math.sqrt(nnorm);
+};
