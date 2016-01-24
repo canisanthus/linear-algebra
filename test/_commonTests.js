@@ -401,21 +401,61 @@ module.exports = function(linAlg, options) {
         }).throws('linear-algebra: [getSum] axis is 2');
       },
     },
-    'getMax': function() {
-      var m = new this.Matrix([ [1, 2, 3], [4, 5, 6] ]);
-      m.getMax().should.eql(6);
+    'getMax': {
+      'without axis': function() {
+        var m = new this.Matrix([ [1, 2, 3], [4, 5, 6] ]);
+        m.getMax().should.eql(6);
+      },
+      'with axis 0': function() {
+        var m = new this.Matrix([ [1, 2, 3], [4, 5, 6] ]);
+        m.getMax(0).should.eql([3, 6]);
+      },
+      'with axis 1': function() {
+        var m = new this.Matrix([ [1, 2, 3], [4, 5, 6] ]);
+        m.getMax(1).should.eql([4, 5, 6]);
+      },
     },
-    'getMin': function() {
-      var m = new this.Matrix([ [1, 2, 3], [4, 5, 6] ]);
-      m.getMin().should.eql(1);
+    'getMin': {
+      'without axis': function() {
+        var m = new this.Matrix([ [1, 2, 3], [4, 5, 6] ]);
+        m.getMin().should.eql(1);
+      },
+      'with axis 0': function() {
+        var m = new this.Matrix([ [1, 2, 3], [4, 5, 6] ]);
+        m.getMin(0).should.eql([1, 4]);
+      },
+      'with axis 1': function() {
+        var m = new this.Matrix([ [1, 2, 3], [4, 5, 6] ]);
+        m.getMin(1).should.eql([1, 2, 3]);
+      },
     },
-    'getArgMax': function() {
-      var m = new this.Matrix([ [1, 2, 3], [4, 5, 6] ]);
-      m.getArgMax().should.eql(5);
+    'getArgMax': {
+      'without axis': function() {
+        var m = new this.Matrix([ [1, 2, 3], [4, 5, 6] ]);
+        m.getArgMax().should.eql(5);
+      },
+      'with axis 0': function() {
+        var m = new this.Matrix([ [1, 2, 3], [4, 5, 6] ]);
+        m.getArgMax(0).should.eql([2, 2]);
+      },
+      'with axis 1': function() {
+        var m = new this.Matrix([ [1, 2, 3], [4, 5, 6] ]);
+        m.getArgMax(1).should.eql([1, 1, 1]);
+      },
     },
-    'getArgMin': function() {
-      var m = new this.Matrix([ [1, 2, 3], [4, 5, 6] ]);
-      m.getArgMin().should.eql(0);
+    'getArgMin': {
+      'without axis': function() {
+        var m = new this.Matrix([ [1, 2, 3], [4, 5, 6] ]);
+        m.getArgMin().should.eql(0);
+      },
+      'with axis 0': function() {
+        var m = new this.Matrix([ [1, 2, 3], [4, 5, 6] ]);
+        m.getArgMin(0).should.eql([0, 0]);
+      },
+      'with axis 1': function() {
+        var m = new this.Matrix([ [1, 2, 3], [4, 5, 6] ]);
+        m.getArgMin(1).should.eql([0, 0, 0]);
+      },
     },
     'getNorm': function() {
       var m = new this.Matrix([ [0.1, 0.2], [0.3, 0.4] ]);
