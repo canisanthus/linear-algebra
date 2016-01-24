@@ -469,6 +469,18 @@ module.exports = function(linAlg, options) {
 
       m.getNorm().should.eql(expected);
     },
+    'getMean': function() {
+      var m = new this.Matrix([ [0.1, 0.2, 0.5], [0.3, 1.4, 1.6] ]);
+
+      var expected;
+      if (options.adder) {
+        expected = options.adder([0.1, 0.2, 0.5, 0.3, 1.4, 1.6]) / 6;
+      } else {
+        expected = (0.1 + 0.2 + 0.5 + 0.3 + 1.4 + 1.6) / 6;
+      }
+
+      m.getMean().should.eql(expected);
+    },
   };
 
 

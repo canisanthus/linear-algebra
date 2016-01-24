@@ -699,6 +699,14 @@ Matrix.prototype.getNorm = function() {
 };
 
 /**
+ * Get the mean of every element.
+ * @return {Number}
+ */
+Matrix.prototype.getMean = function() {
+  return this.getSum() / (this.rows * this.cols);
+};
+
+/**
  * Apply function to all elements in this matrix.
  *
  * @param {Function} transformFn With signature (double) => double

@@ -61,3 +61,11 @@ Matrix.prototype.getNorm = function() {
 
  return Math.sqrt(adder(nnorm));
 };
+
+/**
+ * Get the mean of every element.
+ * @return {Number}
+ */
+Matrix.prototype.getMean = function() {
+  return this.getSum() / (this.rows * this.cols);
+};
