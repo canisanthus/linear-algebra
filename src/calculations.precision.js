@@ -24,3 +24,11 @@ Matrix.prototype.getSum = function(value) {
   
   return adder(sum); 
 };
+
+/**
+ * Get the mean of every element.
+ * @return {Number}
+ */
+Matrix.prototype.getMean = function() {
+  return this.getSum() / (this.rows * this.cols);
+};

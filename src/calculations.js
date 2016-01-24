@@ -14,3 +14,6 @@ Matrix.prototype.getSum = function() {
  return sum;  
 };
 
+Matrix.prototype.getMean = function() {
+  return this.getSum() / (this.rows * this.cols);
+};
