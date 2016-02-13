@@ -98,6 +98,26 @@
   };
 
 
+  /**
+   * Get raveled array of this matrix.
+   *
+   * @return {Array}
+   */
+  Matrix.prototype.ravel = function() {
+    var thisData = this.data,
+      rows = this.rows,
+      cols = this.cols;
+
+    var a = new Array(rows * cols);
+
+    for (var i = 0, jBase = 0; i<rows; ++i, jBase += cols) {
+      for (var j = 0; j<cols; ++j) {
+        a[jBase + j] = thisData[i][j];
+      }
+    }
+
+    return a;
+  };
 
 
   /**
