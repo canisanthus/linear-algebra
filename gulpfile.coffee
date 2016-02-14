@@ -24,6 +24,7 @@ gulp.task 'build-lib', ->
       './src/calculations.js',
       './src/math-transforms.js',
       './src/summary-transforms.js',
+      './src/math-extra.js',
       './src/_footer.js'
     ] )
     .pipe concat('linear-algebra.js') 
@@ -40,6 +41,7 @@ gulp.task 'build-precision-lib', () ->
       './src/calculations.precision.js',
       './src/math-transforms.js',
       './src/summary-transforms.js',
+      './src/math-extra.js',
       './src/_footer.js'
     ] )
     .pipe concat('linear-algebra.precision.js') 
